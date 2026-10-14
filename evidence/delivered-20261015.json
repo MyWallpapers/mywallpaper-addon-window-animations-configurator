@@ -1,0 +1,1035 @@
+{
+  "schemaVersion": 1,
+  "recordKind": "qualification-evidence",
+  "atUtc": "2026-10-14T22:12:43.829Z",
+  "ledgerSha256": "5c198b56bd404e3e035f31687e2ed23b7c0d87655e998bd0940fa2649ddae993",
+  "myWallpaperReferenceCommit": "299548ebcc20770fd73b10bdffd5f05586fbe126",
+  "publication": {
+    "schemaVersion": 1,
+    "publicationId": "01a13c6b-e168-76a2-8ab5-5f856f9b88ad",
+    "addonId": "01a13c65-f028-72a3-9811-fbf9f4a6440e",
+    "repositoryId": "1419887068",
+    "tag": "v0.1.1",
+    "sourceCommitSha": "aca42c1b7e2b1e3cb3ab3bbe7ff0ad5cf750a2f8",
+    "sourceVersion": "0.1.1",
+    "state": "available",
+    "errorCode": null,
+    "failureClass": null,
+    "releaseId": "01a13c70-9ce7-7aa1-adf5-51d73b87f0a5",
+    "distributionDigest": "sha256:4f087f54ac334372b91cde6b30e039f320d0d5f721fbd121d22dde584265cd1b",
+    "retryAllowed": false,
+    "nextAction": "no-further-action",
+    "detailsUrl": "https://github.com/MyWallpapers/native-addon-toolchain/actions/runs/38644212655"
+  },
+  "metadata": {
+    "state": "available",
+    "version": "0.1.1",
+    "commit": "aca42c1b7e2b1e3cb3ab3bbe7ff0ad5cf750a2f8",
+    "digest": "sha256:4f087f54ac334372b91cde6b30e039f320d0d5f721fbd121d22dde584265cd1b",
+    "nativeIndexUrl": "https://cdn-dev.mywallpaper.online/public/native-addon-releases/4f087f54ac334372b91cde6b30e039f320d0d5f721fbd121d22dde584265cd1b/native/index.json",
+    "distributionIndexUrl": "https://cdn-dev.mywallpaper.online/public/native-addon-releases/4f087f54ac334372b91cde6b30e039f320d0d5f721fbd121d22dde584265cd1b/index.json"
+  },
+  "byteVerification": {
+    "version": "0.1.1",
+    "sourceCommit": "aca42c1b7e2b1e3cb3ab3bbe7ff0ad5cf750a2f8",
+    "distributionDigest": "sha256:4f087f54ac334372b91cde6b30e039f320d0d5f721fbd121d22dde584265cd1b",
+    "files": [
+      {
+        "path": "native/out/windows-x86_64/LICENSE",
+        "hashMatches": true,
+        "sizeMatches": true
+      },
+      {
+        "path": "native/out/windows-x86_64/THIRD_PARTY_NOTICES.md",
+        "hashMatches": true,
+        "sizeMatches": true
+      },
+      {
+        "path": "native/out/windows-x86_64/companion.exe",
+        "hashMatches": true,
+        "sizeMatches": true
+      },
+      {
+        "path": "native/out/windows-x86_64/notices/nlohmann-MIT.txt",
+        "hashMatches": true,
+        "sizeMatches": true
+      },
+      {
+        "path": "native/out/windows-x86_64/window-animations-preview.exe",
+        "hashMatches": true,
+        "sizeMatches": true
+      }
+    ],
+    "passed": true
+  },
+  "runtime": {
+    "date": "2026-10-14",
+    "host": "owned Win32 preview process",
+    "settingsDefinitions": 69,
+    "observations": [
+      {
+        "restore": 1,
+        "lastFrameMs": 8.1505,
+        "open": 1,
+        "frames": 96,
+        "dpi": 96,
+        "mode": "fade",
+        "minimize": 1,
+        "close": 1
+      },
+      {
+        "restore": 1,
+        "lastFrameMs": 8.0887,
+        "open": 1,
+        "frames": 96,
+        "dpi": 96,
+        "mode": "slide",
+        "minimize": 1,
+        "close": 1
+      },
+      {
+        "restore": 1,
+        "lastFrameMs": 6.1409,
+        "open": 1,
+        "frames": 96,
+        "dpi": 96,
+        "mode": "zoom",
+        "minimize": 1,
+        "close": 1
+      },
+      {
+        "restore": 1,
+        "lastFrameMs": 6.4248,
+        "open": 1,
+        "frames": 97,
+        "dpi": 96,
+        "mode": "spring",
+        "minimize": 1,
+        "close": 1
+      },
+      {
+        "restore": 1,
+        "lastFrameMs": 0.3918,
+        "open": 1,
+        "frames": 97,
+        "dpi": 96,
+        "mode": "genie",
+        "minimize": 1,
+        "close": 1
+      },
+      {
+        "restore": 1,
+        "lastFrameMs": 7.1075,
+        "open": 1,
+        "frames": 98,
+        "dpi": 96,
+        "mode": "wobbly",
+        "minimize": 1,
+        "close": 1
+      },
+      {
+        "settingsRemainedResponsive": true,
+        "test": "blocked fixture UI / capture isolation"
+      },
+      {
+        "effectsSuppressed": true,
+        "test": "actual Windows reduced-motion preference"
+      },
+      {
+        "windowRestored": true,
+        "test": "forced companion termination"
+      },
+      {
+        "passed": true,
+        "test": "stdin EOF shutdown"
+      },
+      {
+        "passed": true,
+        "test": "single owner conflict"
+      },
+      {
+        "passed": true,
+        "test": "truncated / out-of-order wire chunks"
+      }
+    ],
+    "limitations": [
+      "Accelerated/translucent applications, secondary monitors, high DPI and real MyWallpaper sidebar not exercised by this fixture."
+    ],
+    "windows": {
+      "Caption": "Microsoft Windows 11 Professionnel",
+      "Version": "10.0.26200",
+      "BuildNumber": "26200"
+    }
+  },
+  "app": {
+    "family": "A07",
+    "throughMyWallpaper": true,
+    "atUtc": "2026-10-14T22:03:18Z",
+    "transitions": [
+      {
+        "mode": "fade",
+        "counts": {
+          "open": 1,
+          "close": 1,
+          "minimize": 1,
+          "restore": 1
+        },
+        "frames": 71,
+        "cacheBytes": 0,
+        "lastFrameMs": 8.4024
+      },
+      {
+        "mode": "slide",
+        "counts": {
+          "open": 1,
+          "close": 1,
+          "minimize": 1,
+          "restore": 1
+        },
+        "frames": 72,
+        "cacheBytes": 0,
+        "lastFrameMs": 8.3267
+      },
+      {
+        "mode": "zoom",
+        "counts": {
+          "open": 1,
+          "close": 1,
+          "minimize": 1,
+          "restore": 1
+        },
+        "frames": 71,
+        "cacheBytes": 0,
+        "lastFrameMs": 5.4556
+      },
+      {
+        "mode": "spring",
+        "counts": {
+          "open": 1,
+          "close": 1,
+          "minimize": 1,
+          "restore": 1
+        },
+        "frames": 70,
+        "cacheBytes": 0,
+        "lastFrameMs": 6.8881
+      },
+      {
+        "mode": "genie",
+        "counts": {
+          "open": 1,
+          "close": 1,
+          "minimize": 1,
+          "restore": 1
+        },
+        "frames": 59,
+        "cacheBytes": 0,
+        "lastFrameMs": 0.4469
+      },
+      {
+        "mode": "wobbly",
+        "counts": {
+          "open": 1,
+          "close": 1,
+          "minimize": 1,
+          "restore": 1
+        },
+        "frames": 59,
+        "cacheBytes": 0,
+        "lastFrameMs": 7.85
+      }
+    ],
+    "checks": [
+      "six animation modes each rendered four real Win32 transitions through MyWallpaper",
+      "disable drains native animations and restores reduced-motion setting",
+      "layer removal terminates native companion"
+    ],
+    "passed": true
+  },
+  "stress": {
+    "passed": true,
+    "scope": "owned Win32 windows, interactive desktop",
+    "atUtc": "2026-10-14T22:04:05Z",
+    "companionSha256": "8ef3ed77d5bc8873f401b8477791d505538390ef8f0327fa3ff69d5b3f908a6d",
+    "previewSha256": "a44e9d73c29feda1d6e5fea2a2131fcc3da8500493abcc9d66392cec96854ffe",
+    "checks": [
+      {
+        "test": "12 stalled targets / disable",
+        "statusLatencySeconds": 0.344
+      },
+      {
+        "test": "interrupted animations restore exactly",
+        "cycles": 100
+      },
+      {
+        "test": "shutdown removes companion/helpers/overlays",
+        "passed": true
+      }
+    ],
+    "samples": [
+      {
+        "stage": "disabled after warmup",
+        "seconds": 26.203,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 1769472,
+            "workingSetBytes": 11923456,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 1.5312
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1179648,
+            "workingSetBytes": 7401472,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1204224,
+            "workingSetBytes": 8810496,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0625
+          }
+        ],
+        "privateBytes": 5378048,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 0,
+          "cancelled": 20,
+          "captureFailures": 6,
+          "captures": 49,
+          "close": 0,
+          "enabled": false,
+          "frames": 100,
+          "lastFrameMs": 10.6457,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 26,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 0,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "disabled after 20 cycles",
+        "seconds": 46.187,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 1675264,
+            "workingSetBytes": 11890688,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 2.0938
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1081344,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1105920,
+            "workingSetBytes": 8835072,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0781
+          }
+        ],
+        "privateBytes": 5087232,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 0,
+          "cancelled": 40,
+          "captureFailures": 6,
+          "captures": 69,
+          "close": 0,
+          "enabled": false,
+          "frames": 120,
+          "lastFrameMs": 8.321,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 46,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 0,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "disabled after 40 cycles",
+        "seconds": 66.687,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 1675264,
+            "workingSetBytes": 11915264,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 2.5781
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1081344,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1105920,
+            "workingSetBytes": 8884224,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0781
+          }
+        ],
+        "privateBytes": 5087232,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 0,
+          "cancelled": 60,
+          "captureFailures": 6,
+          "captures": 89,
+          "close": 0,
+          "enabled": false,
+          "frames": 140,
+          "lastFrameMs": 8.0804,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 66,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 0,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "disabled after 60 cycles",
+        "seconds": 86.687,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 1675264,
+            "workingSetBytes": 11939840,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 3.0156
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1081344,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1105920,
+            "workingSetBytes": 8925184,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0938
+          }
+        ],
+        "privateBytes": 5087232,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 0,
+          "cancelled": 80,
+          "captureFailures": 6,
+          "captures": 109,
+          "close": 0,
+          "enabled": false,
+          "frames": 162,
+          "lastFrameMs": 8.7061,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 86,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 0,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "disabled after 80 cycles",
+        "seconds": 106.687,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 1675264,
+            "workingSetBytes": 11968512,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 3.5156
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1081344,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1105920,
+            "workingSetBytes": 8966144,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.125
+          }
+        ],
+        "privateBytes": 5087232,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 0,
+          "cancelled": 100,
+          "captureFailures": 6,
+          "captures": 129,
+          "close": 0,
+          "enabled": false,
+          "frames": 186,
+          "lastFrameMs": 7.8534,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 106,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 0,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "disabled after 100 cycles",
+        "seconds": 127.187,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 1675264,
+            "workingSetBytes": 11976704,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 4.0312
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1081344,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1105920,
+            "workingSetBytes": 8978432,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.125
+          }
+        ],
+        "privateBytes": 5087232,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 0,
+          "cancelled": 120,
+          "captureFailures": 6,
+          "captures": 149,
+          "close": 0,
+          "enabled": false,
+          "frames": 214,
+          "lastFrameMs": 7.822,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 126,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 0,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "idle active baseline",
+        "seconds": 128.187,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 2752512,
+            "workingSetBytes": 13062144,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 4.2031
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1081344,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1105920,
+            "workingSetBytes": 8978432,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.125
+          }
+        ],
+        "privateBytes": 6164480,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 1076112,
+          "cancelled": 120,
+          "captureFailures": 6,
+          "captures": 151,
+          "close": 0,
+          "enabled": true,
+          "frames": 234,
+          "lastFrameMs": 8.1428,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 127,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 1,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "idle active 30s",
+        "seconds": 158.203,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 2723840,
+            "workingSetBytes": 13058048,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 4.5312
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1048576,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1073152,
+            "workingSetBytes": 8986624,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.1875
+          }
+        ],
+        "privateBytes": 6070272,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 1076112,
+          "cancelled": 120,
+          "captureFailures": 6,
+          "captures": 224,
+          "close": 0,
+          "enabled": true,
+          "frames": 234,
+          "lastFrameMs": 8.1428,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 127,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 1,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "idle active 60s",
+        "seconds": 188.219,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 2723840,
+            "workingSetBytes": 13066240,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 4.75
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1048576,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1073152,
+            "workingSetBytes": 9007104,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.2969
+          }
+        ],
+        "privateBytes": 6070272,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 1076112,
+          "cancelled": 120,
+          "captureFailures": 6,
+          "captures": 296,
+          "close": 0,
+          "enabled": true,
+          "frames": 234,
+          "lastFrameMs": 8.1428,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 127,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 1,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "idle active 90s",
+        "seconds": 218.234,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 2723840,
+            "workingSetBytes": 13066240,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 4.9219
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1048576,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1073152,
+            "workingSetBytes": 9007104,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.375
+          }
+        ],
+        "privateBytes": 6070272,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 1076112,
+          "cancelled": 120,
+          "captureFailures": 6,
+          "captures": 368,
+          "close": 0,
+          "enabled": true,
+          "frames": 234,
+          "lastFrameMs": 8.1428,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 127,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 1,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      },
+      {
+        "stage": "final disabled",
+        "seconds": 218.734,
+        "processes": [
+          {
+            "pid": 24532,
+            "privateBytes": 1646592,
+            "workingSetBytes": 11988992,
+            "handles": 109,
+            "gdiObjects": 0,
+            "userObjects": 7,
+            "cpuSeconds": 4.9219
+          },
+          {
+            "pid": 27564,
+            "privateBytes": 1224704,
+            "workingSetBytes": 8355840,
+            "handles": 99,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0
+          },
+          {
+            "pid": 64900,
+            "privateBytes": 1048576,
+            "workingSetBytes": 7344128,
+            "handles": 91,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.0156
+          },
+          {
+            "pid": 40780,
+            "privateBytes": 1073152,
+            "workingSetBytes": 9007104,
+            "handles": 93,
+            "gdiObjects": 0,
+            "userObjects": 1,
+            "cpuSeconds": 0.375
+          }
+        ],
+        "privateBytes": 4993024,
+        "handles": 392,
+        "status": {
+          "active": 0,
+          "cacheBytes": 0,
+          "cancelled": 120,
+          "captureFailures": 6,
+          "captures": 368,
+          "close": 0,
+          "enabled": false,
+          "frames": 234,
+          "lastFrameMs": 8.1428,
+          "lastMode": "fade",
+          "minimize": 0,
+          "open": 127,
+          "profile": "custom",
+          "reducedMotion": true,
+          "respectReducedMotion": false,
+          "restore": 0,
+          "schemaVersion": 1,
+          "skipped": 4,
+          "tracked": 0,
+          "watchdogAvailable": true,
+          "windowsBuildMechanism": "external WinEvent / isolated PrintWindow / layered bitmap overlay"
+        }
+      }
+    ]
+  },
+  "sidebar": {
+    "version": true,
+    "ambiance": "Genie · vers le bord de l’écran",
+    "speed": "135",
+    "untruncatedVisibleLabels": true,
+    "alerts": [],
+    "nativeControllerSpeed": 135,
+    "nativeControllerProfile": "genie"
+  },
+  "preservation": {
+    "authenticated": true,
+    "samePublishedLayerIds": true,
+    "publishedLayerCount": 3,
+    "developmentLayerCount": 0,
+    "appPid": 51156,
+    "explorerPid": 13472,
+    "appAndExplorerKeptOpen": true,
+    "ownedPreviewAndCompanionAndHelpersStopped": true
+  },
+  "limits": [
+    "Opaque owned Win32 windows on Windows 11 26200, 96 DPI; accelerated/translucent applications and multiple monitors/DPI not qualified.",
+    "Windows post-event snapshot overlays; no guarantee of replacing native transitions, interactive deformation or 60 fps.",
+    "100 interruptions and 90 seconds idle per final binary; no day-long leak qualification.",
+    "One earlier local matrix triggered the 1500 ms restoration guard; the root cause of that delay is not established. Later local and central matrices, app tests and stress tests passed.",
+    "MyWallpaper integration uses its human-authorized DEV overlay with the exact central published executable bytes; permanent normal published-layer activation was not performed."
+  ]
+}

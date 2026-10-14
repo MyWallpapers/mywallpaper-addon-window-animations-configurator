@@ -3,7 +3,8 @@
 Preuve consommable, pas une décision parallèle. Ledger relu en premier :
 SHA-256 `5c198b56bd404e3e035f31687e2ed23b7c0d87655e998bd0940fa2649ddae993`. Code audité : `ef4121c3b1fb80c40b1c7469273d4eec372cd6db` ;
 MyWallpaper de référence : `299548ebcc20770fd73b10bdffd5f05586fbe126`.
-Les changements suivants concernent uniquement cette preuve documentaire.
+Les octets centraux de la 0.1.1 et leur publication sont qualifiés séparément
+dans `docs/release-0.1.1.md` et `evidence/delivered-20261015.json`.
 DEC-0012/0013/0140/0152/0160 : conforme au périmètre testé et aux frontières
 constatées ; aucune modification du moteur, du SDK, du core ou du ledger.
 
@@ -20,7 +21,7 @@ constatées ; aucune modification du moteur, du SDK, du core ou du ledger.
   reste réactive ; le guardian n'est pas déclenché lors de ce contrôle.
 - Fin stdin, conflit entre instances après init/progress, settings invalides,
   réduction des animations Windows, arrêt forcé et chunks malformés : contrôles passés.
-- Les trois processus de l'add-on gardent environ 6 Mio privés en activité sur
+- Le companion et ses processus enfants gardent environ 6 Mio privés en activité sur
   une fenêtre. Le nombre total de handles reste à 392 ; le cache retombe à zéro
   à la désactivation et tous les helpers disparaissent à shutdown.
 - Deux builds frais, dans des clones et dossiers différents : les cinq fichiers
