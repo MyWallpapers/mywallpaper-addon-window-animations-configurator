@@ -111,3 +111,10 @@ sans changement de responsabilité, de contrat public ou de décision du ledger.
 Pas de suppression fondée sur la seule non-observation. Aucun changement du
 core, du moteur partagé, du SDK ou du ledger. La qualification courante et
 l'identité exacte de publication sont consignées dans le rapport de livraison.
+
+Le runner central ne charge pas la fonction PowerShell Get-FileHash. Le build
+0.1.1 calcule la même empreinte SHA-256 avec .NET et dispose son objet crypto ;
+la comparaison à la même valeur du lockfile reste obligatoire avant compilation.
+Les callsites sont la commande du configurateur et le build local. Aucun contrat
+runtime n'est modifié. Manifeste, générateur et version CMake restent synchronisés ;
+les fixtures lisent désormais la version du manifeste pour leur handshake.

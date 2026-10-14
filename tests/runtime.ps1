@@ -73,7 +73,7 @@ function Start-Session($Settings,[string]$Name) {
     $start.EnvironmentVariables['MW_WINDOW_ANIMATIONS_TEST_CAPTURE']=Join-Path $scratch 'frames'
     $process=[Diagnostics.Process]::new();$process.StartInfo=$start;[void]$process.Start()
     $stderr=$process.StandardError.ReadToEndAsync()
-    Write-Record $process @{type='init';v=5;addonId='development-window-animations';artifactDigest=('sha256:'+('a'*64));version='0.1.0';targetArchitecture='windows-x86_64';scratchDirectory=$scratch;layerSettings=@{};deviceSettings=$Settings}
+    Write-Record $process @{type='init';v=5;addonId='development-window-animations';artifactDigest=('sha256:'+('a'*64));version=$manifest.version;targetArchitecture='windows-x86_64';scratchDirectory=$scratch;layerSettings=@{};deviceSettings=$Settings}
     do{$record=Read-Record $process; Assert ($record.type -ne 'error') ($record | ConvertTo-Json -Compress)}while($record.type -ne 'ready')
     return @{process=$process;stderr=$stderr;scratch=$scratch}
 }
@@ -190,7 +190,7 @@ try {
     $session=Start-Session $defaults 'owner'
     $second=Start-RawCompanion
     try {
-        Write-Record $second @{type='init';v=5;addonId='development-window-animations-second';artifactDigest=('sha256:'+('b'*64));version='0.1.0';targetArchitecture='windows-x86_64';scratchDirectory=(Join-Path $EvidenceDirectory 'owner-second');layerSettings=@{};deviceSettings=$defaults}
+        Write-Record $second @{type='init';v=5;addonId='development-window-animations-second';artifactDigest=('sha256:'+('b'*64));version=$manifest.version;targetArchitecture='windows-x86_64';scratchDirectory=(Join-Path $EvidenceDirectory 'owner-second');layerSettings=@{};deviceSettings=$defaults}
         $progress=Read-Record $second;Assert ($progress.type -eq 'progress') 'Second companion skipped init/progress handshake.'
         $conflict=Read-Record $second;Assert ($conflict.code -eq 'addon_owner_conflict') 'Second layer did not report owner conflict.';Assert ($second.WaitForExit(3000)) 'Conflicting companion did not exit.'
     }finally{if(-not $second.HasExited){$second.Kill()};$second.Dispose()}

@@ -25,8 +25,8 @@ parser.add_argument('--cycles', type=int, default=100)
 parser.add_argument('--idle-seconds', type=int, default=90)
 args = parser.parse_args()
 root = Path(__file__).resolve().parent.parent
-defaults = {s['id']: s['default'] for s in json.loads(
-    (root / 'manifest.json').read_text(encoding='utf-8'))['settings']
+manifest = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
+defaults = {s['id']: s['default'] for s in manifest['settings']
     if s['type'] != 'section'}
 u = c.WinDLL('user32', use_last_error=True)
 k = c.WinDLL('kernel32', use_last_error=True)
@@ -109,7 +109,7 @@ def start_companion(scratch, values):
             records.put({'type': 'reader_error', 'message': str(error)})
     threading.Thread(target=read, daemon=True).start()
     send(process, {'type': 'init', 'v': 5, 'addonId': 'qa-a07-stress',
-        'artifactDigest': 'sha256:' + 'c' * 64, 'version': '0.1.0',
+        'artifactDigest': 'sha256:' + 'c' * 64, 'version': manifest['version'],
         'targetArchitecture': 'windows-x86_64',
         'scratchDirectory': str(scratch), 'layerSettings': {},
         'deviceSettings': values})

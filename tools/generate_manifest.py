@@ -103,7 +103,7 @@ slider("maxSnapshots", "Fenêtres gardées en mémoire", 12, 1, 24, 1, "Les capt
 slider("cacheInterval", "Actualiser les captures tous les (ms)", 400, 100, 2000, 50, "Les fermetures et réductions utilisent la dernière capture disponible.")
 slider("cacheMaxAge", "Âge maximal d’une capture (ms)", 2000, 250, 5000, 50, "Une capture trop ancienne est ignorée pour éviter d’animer un contenu périmé.")
 assert len(settings) <= 100
-manifest = dict(runtime="native-v1", name="Animations des fenêtres", version="0.1.0", deviceSettingsVersion="1",
+manifest = dict(runtime="native-v1", name="Animations des fenêtres", version="0.1.1", deviceSettingsVersion="1",
                 description="Personnalisez les quatre transitions de vos fenêtres avec des ambiances, Genie, des rebonds et des profils par application.",
                 settings=settings, native=dict(companion=dict(runtime="process-v2", entries={"windows-x86_64": "native/out/windows-x86_64/companion.exe"})))
 (root / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

@@ -16,7 +16,11 @@ $cmake = Join-Path $vs 'Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/c
 $ctest = Join-Path $vs 'Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe'
 $pin = Get-Content -Raw -Encoding UTF8 (Join-Path $PSScriptRoot 'dependencies.lock.json') | ConvertFrom-Json
 $header = Join-Path $repo 'third_party/nlohmann/json.hpp'
-if ((Get-FileHash -LiteralPath $header -Algorithm SHA256).Hash.ToLowerInvariant() -ne $pin.nlohmann.sha256) { throw 'Vendored nlohmann header hash mismatch.' }
+$sha256 = [Security.Cryptography.SHA256]::Create()
+try {
+    $headerHash = [BitConverter]::ToString($sha256.ComputeHash([IO.File]::ReadAllBytes($header))).Replace('-', '').ToLowerInvariant()
+} finally { $sha256.Dispose() }
+if ($headerHash -ne $pin.nlohmann.sha256) { throw 'Vendored nlohmann header hash mismatch.' }
 & $cmake -S $repo -B $BuildDirectory -G $generator -A x64 "-DCMAKE_GENERATOR_INSTANCE=$vs"
 if ($LASTEXITCODE) { throw 'CMake configuration failed.' }
 & $cmake --build $BuildDirectory --config Release --parallel 4

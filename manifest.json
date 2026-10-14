@@ -1,7 +1,7 @@
 {
   "runtime": "native-v1",
   "name": "Animations des fenêtres",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "deviceSettingsVersion": "1",
   "description": "Personnalisez les quatre transitions de vos fenêtres avec des ambiances, Genie, des rebonds et des profils par application.",
   "settings": [
