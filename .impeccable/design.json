@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T06:21:57Z",
+  "title": "Design System: MyWallpaper Animations des fenêtres",
+  "extensions": {
+    "colorMeta": {
+      "preview-canvas": { "role": "preview", "displayName": "Deep navy sample canvas" },
+      "preview-heading": { "role": "preview", "displayName": "Cool light sample heading" },
+      "preview-copy": { "role": "preview", "displayName": "Muted blue-gray sample copy" },
+      "preview-bar-1": { "role": "preview", "displayName": "Blue sample bar 1" },
+      "preview-bar-2": { "role": "preview", "displayName": "Blue sample bar 2" },
+      "preview-bar-3": { "role": "preview", "displayName": "Blue-teal sample bar 3" },
+      "preview-bar-4": { "role": "preview", "displayName": "Teal sample bar 4" },
+      "preview-bar-5": { "role": "preview", "displayName": "Teal-sage sample bar 5" },
+      "preview-bar-6": { "role": "preview", "displayName": "Sage sample bar 6" },
+      "preview-bar-7": { "role": "preview", "displayName": "Light sage sample bar 7" }
+    },
+    "typographyMeta": {
+      "title": { "displayName": "Preview title", "purpose": "Heading in the native sample canvas only." },
+      "body": { "displayName": "Preview copy", "purpose": "Supporting copy in the native sample canvas only." }
+    },
+    "shadows": [
+      {
+        "name": "addon-render-shadow",
+        "value": "In the 96-DPI qualified run, manifest defaults are shadowSize 24px and shadowOpacity 22%. Render uses a 12px box-blur radius and a 6px downward offset. The PNG alpha halo is Render output, not a DWM-only shadow measurement.",
+        "purpose": "Shadow synthesized by add-on Render from the transformed captured-window alpha."
+      }
+    ]
+  },
+  "components": [],
+  "narrative": {
+    "overview": "This add-on extends MyWallpaper's usual settings surface and uses the host's native-only settings renderer. It has no separate settings identity. “Fluide et expressif” is the chosen motion default; it describes the effect preset, not a visual theme. The native sample canvas is defined in src/preview.cpp. The supplied PNGs are outputs from the add-on Render pass, based on that captured window image, under Windows 11 build 26200 at 96 DPI. They show animated image output after the add-on rounded mask and shadow handling, with optional contour processing; the qualified runtime frames use contour off. The caption chrome in the source image is Windows-drawn. They do not show the MyWallpaper sidebar, settings controls, or the preview controller and its buttons.",
+    "keyCharacteristics": [
+      "Settings appearance is inherited from MyWallpaper; no add-on-specific settings palette or control styling was observed.",
+      "The sample canvas uses a deep navy field, cool light text, and a blue-to-sage bar series.",
+      "Windows supplies the caption chrome; the add-on renderer applies a rounded mask and shadow and can add a configurable contour to animation output."
+    ],
+    "rules": [],
+    "dos": [
+      "Do keep the preview tokens scoped to the native test canvas.",
+      "Do treat settings appearance as inherited from MyWallpaper until the host surface is visually observed.",
+      "Do distinguish Windows-drawn caption chrome from the add-on-rendered mask, optional contour, and shadow."
+    ],
+    "donts": [
+      "Don't present the native-frame PNGs as captures of the MyWallpaper sidebar or its controls.",
+      "Don't infer settings colors, spacing, typography, hover, focus, or disabled states from the sample window.",
+      "Don't represent Windows controls with invented HTML or CSS snippets."
+    ]
+  }
+}

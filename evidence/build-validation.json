@@ -1,0 +1,206 @@
+{
+  "kind": "implementation evidence, not launch or architecture approval",
+  "generatedAt": "2026-10-13T06:32:09.218093+00:00",
+  "coreCommitExamined": "299548ebcc20770fd73b10bdffd5f05586fbe126",
+  "ledgerSha256": "c52e81b2d36b773bd89538c86999d88098ba6d73b736e89b879a65029ea651fa",
+  "addonBranch": "codex/window-animations",
+  "addonBaseline": "new repository; no earlier commit",
+  "sourceInventorySha256": "521afb4af7fcabb05ce006e5fa93e39e46efd9863a7291b5811da62ef1a09d6c",
+  "sourceFiles": [
+    {
+      "path": ".gitattributes",
+      "sha256": "baacfc614e652eaf5d2239b7af31f3f0f70422a9c578323df44e87adf5e87ade"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "c4ec2426399a6b0592bfff2a7c1f04d324e25cb7b11c21a6d2d82764c54fbe03"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "f5b44bc14021b83e83a2c164709a7f14c9a5b13abd1728d86e964585e2406707"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "07c869e8100bedf67079f778daa5ef535b99579ba175f5764cdda1580a7d2f8f"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "848121569a1277a9dd25fc92541f6e988b4489954abae134ff8113b747f5075d"
+    },
+    {
+      "path": "include/animation.hpp",
+      "sha256": "6f8d558507f452c6da774995d69d8eb58025ba61e9bb04f6cba762f7ed58e7b9"
+    },
+    {
+      "path": "include/capture.hpp",
+      "sha256": "2cc9ba1610e505ca361e855363ff304d7f3b4628fd6f40df62e0810dd00d5ce7"
+    },
+    {
+      "path": "include/runtime.hpp",
+      "sha256": "c4cd562141c04b7b5e12e71033a18ce381afd370ee260e695eb22ceb21688083"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "fbbe7ec1bb33b117eaa4cf05694daceb3e279acd2f3710bce69d06901a361715"
+    },
+    {
+      "path": "mywallpaper.config.json",
+      "sha256": "f9b6b063a1afbc13d5fb88f22a299b1e39302fa363a620c85fe8c34bdb6321a6"
+    },
+    {
+      "path": "native/build.ps1",
+      "sha256": "71aa39883717c0fcc03b93d0f76099f133749e9c6d133dc1300540242a5cb765"
+    },
+    {
+      "path": "native/dependencies.lock.json",
+      "sha256": "3f8efcb52ff4522fb59c38951f13bd24fb9a757e0fae3ab1b352f69bc48c7d0e"
+    },
+    {
+      "path": "presets/bounce.json",
+      "sha256": "02ff212de4bb2e8765d901503338b98b81002292ca4ea6df52545aa15f26fbf7"
+    },
+    {
+      "path": "presets/cinema.json",
+      "sha256": "7e039d2d295192303d8aa11d45b015c969634f82ea2fcf1b8a977f5b277188d9"
+    },
+    {
+      "path": "presets/discreet.json",
+      "sha256": "bd1654c4fc2e3646266ae05c854ab2ad7616409ed7ece3bee22832c58249e72e"
+    },
+    {
+      "path": "presets/fluid.json",
+      "sha256": "fc2e651a80d8e2676c77f8e7474479571567080d2c93ff120413b7bb65041a69"
+    },
+    {
+      "path": "presets/genie.json",
+      "sha256": "4bd935ad0f6a6d4d926fec235e1a91245403c2176cfe45451c7155c8d724f5d0"
+    },
+    {
+      "path": "presets/wobbly.json",
+      "sha256": "4c52734666504c01313e8b0bb8fbfbc6af16aa699d88fbef232ecb1f6b90a7be"
+    },
+    {
+      "path": "src/capture.cpp",
+      "sha256": "eefb1f30dc77e3cc7e97af8eb9cd9d12ed0d0b5d7452f44f9b8a56745cfa99f7"
+    },
+    {
+      "path": "src/companion.cpp",
+      "sha256": "0d8a40f738955cc5937618855e22247a56df66c39bc90fb347444a460c940539"
+    },
+    {
+      "path": "src/config.cpp",
+      "sha256": "5f405ea3b4382d6020f14603190d6aeaeaacd83b506a97c0251922e75c84581b"
+    },
+    {
+      "path": "src/motion.cpp",
+      "sha256": "6590feddbf3e6b5560c7682c901d0777e6d13cc806351a750542bc6f6a5f8c4a"
+    },
+    {
+      "path": "src/preview.cpp",
+      "sha256": "89e7bd40f1def61eff77f5d3322204a31a084d6dad101e84f5825614c83b974a"
+    },
+    {
+      "path": "src/render.cpp",
+      "sha256": "425c50aee14115ad8587721ffe969f4a693622ad4d18768898496e9c1faf51f0"
+    },
+    {
+      "path": "src/runtime.cpp",
+      "sha256": "3c22079426ee0121ba29a8bf3b2e815e1d807b7bb45741b8cd9160caa3492fe5"
+    },
+    {
+      "path": "src/watchdog.cpp",
+      "sha256": "529e6d1f745fb3b395690c6a82324c7a44f399dac8d00bfd35ce6a084011cbd1"
+    },
+    {
+      "path": "tests/contract_tests.cpp",
+      "sha256": "8a0a8889265f8c5db2a166db311c5fc89d70ec18eaa8a6cc0fa49598ab3da747"
+    },
+    {
+      "path": "tests/manifest-contract.mjs",
+      "sha256": "ca5de0a77305e8ceda5346b2154eff3bb28351accaffd8461fbc9c336f0993f4"
+    },
+    {
+      "path": "tests/runtime.ps1",
+      "sha256": "6e6fd77974dfd811774301241a8e9891534a123a1447d7f71a820c10ea62e3f7"
+    },
+    {
+      "path": "third_party/nlohmann/LICENSE.MIT",
+      "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603"
+    },
+    {
+      "path": "third_party/nlohmann/json.hpp",
+      "sha256": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63"
+    },
+    {
+      "path": "tools/export_frames.py",
+      "sha256": "d0506f57950c4264f3c6342d7500595f8aafd050a76f4f473a7f44656a4ae04b"
+    },
+    {
+      "path": "tools/generate_manifest.py",
+      "sha256": "e5b9bd1fd040cd01f4a6bbe3cd5dc5aee43a3d4f045c62d4c8cef1a5f47c2f4e"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "native/out/windows-x86_64/companion.exe",
+      "sha256": "d3d55608b8c4cf927de11e259fb5c7075ffff7ba2bdf3f85ab42d7c0ec652799",
+      "sizeBytes": 528896
+    },
+    {
+      "path": "native/out/windows-x86_64/LICENSE",
+      "sha256": "07c869e8100bedf67079f778daa5ef535b99579ba175f5764cdda1580a7d2f8f",
+      "sizeBytes": 1069
+    },
+    {
+      "path": "native/out/windows-x86_64/notices/nlohmann-MIT.txt",
+      "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603",
+      "sizeBytes": 1076
+    },
+    {
+      "path": "native/out/windows-x86_64/THIRD_PARTY_NOTICES.md",
+      "sha256": "848121569a1277a9dd25fc92541f6e988b4489954abae134ff8113b747f5075d",
+      "sizeBytes": 1245
+    },
+    {
+      "path": "native/out/windows-x86_64/window-animations-preview.exe",
+      "sha256": "dfa965a201647898aa24f317374122862cd63c1df375571c0bf59eac3ce94443",
+      "sizeBytes": 120320
+    }
+  ],
+  "checks": {
+    "windowsReleaseBuild": "passed",
+    "windowsCTest": {
+      "passed": 1,
+      "failed": 0
+    },
+    "wslReleaseModelCTest": {
+      "passed": 1,
+      "failed": 0
+    },
+    "currentPublicSdkManifest": {
+      "passed": true,
+      "definitions": 69,
+      "deviceValues": 61,
+      "sections": 8,
+      "presetSnapshots": 6
+    },
+    "nativeRuntime": {
+      "passed": true,
+      "runner": "Windows PowerShell 5.1",
+      "source": "evidence/runtime/windows-26200-delivered-bytes/runtime-results.json",
+      "trackedCopy": "evidence/windows-26200-results.json",
+      "transitions": 24,
+      "safetyObservations": 6
+    }
+  },
+  "buildNotes": [
+    "MSBuild MSB8029 (temporary build path)",
+    "MSBuild MSB8064 (WSL case-sensitive CMakeLists path); compilation and CTest succeeded"
+  ],
+  "limits": [
+    "Owned Win32 fixture, Windows 11 build 26200, 96 DPI",
+    "No real MyWallpaper sidebar visual qualification",
+    "No accelerated/translucent application, high-DPI or secondary-monitor qualification",
+    "60 fps is a requested rate, not a benchmark guarantee"
+  ]
+}

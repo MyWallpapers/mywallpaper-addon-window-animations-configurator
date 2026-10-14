@@ -1,0 +1,14 @@
+{
+  "kind": "native runtime framebuffer, not a sidebar screenshot",
+  "source": "tests/runtime.ps1 / windows-26200-qualified / transitions/frames/minimize-genie.bmp",
+  "sourceSha256": "1a1fd04c777d0ca5c410d9606b841b3bc23a220deea166100cc27b91011d47b9",
+  "pngSha256": "bd4b36e848dd4adf1d125487ec0310c28381190b7f2970da90129f60b78a7d79",
+  "minimumProgress": 0.38,
+  "dimensions": [
+    254,
+    170
+  ],
+  "windowsBuild": "26200",
+  "dpi": 96,
+  "transformation": "BGRA premultiplied BMP to straight-alpha RGBA PNG; rounded channel unpremultiplication"
+}

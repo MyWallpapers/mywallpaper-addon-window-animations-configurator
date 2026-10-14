@@ -1,0 +1,14 @@
+{
+  "kind": "native runtime framebuffer, not a sidebar screenshot",
+  "source": "tests/runtime.ps1 / windows-26200-qualified / transitions/frames/open-zoom.bmp",
+  "sourceSha256": "a29bc6b31ad365e48d9d8b5f8d50aa18a1697372f8dee8bae46611768b21d065",
+  "pngSha256": "26db37b30e2e3413ff6f3af354131a64f94e0b65366324cf5b391fd4e6764790",
+  "minimumProgress": 0.38,
+  "dimensions": [
+    672,
+    465
+  ],
+  "windowsBuild": "26200",
+  "dpi": 96,
+  "transformation": "BGRA premultiplied BMP to straight-alpha RGBA PNG; rounded channel unpremultiplication"
+}

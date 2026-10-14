@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "nlohmann": {
+    "source": "mywallpaper-native-engine/third_party/nlohmann/json.hpp",
+    "sourceRevision": "ff32c520dd4ccd9073c9dc001a180e886d50ab63",
+    "sha256": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63",
+    "license": "MIT"
+  },
+  "processV2Reference": {
+    "repository": "mywallpaper-native-engine",
+    "revision": "ff32c520dd4ccd9073c9dc001a180e886d50ab63",
+    "file": "controller/src/process_v2.rs",
+    "wireVersion": 5,
+    "implementation": "addon-owned external-observation companion; no engine DLL injection"
+  }
+}

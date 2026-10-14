@@ -1,0 +1,99 @@
+{
+  "observations": [
+    {
+      "restore": 1,
+      "mode": "fade",
+      "lastFrameMs": 14.8126,
+      "close": 1,
+      "open": 1,
+      "frames": 79,
+      "dpi": 96,
+      "minimize": 1
+    },
+    {
+      "restore": 1,
+      "mode": "slide",
+      "lastFrameMs": 12.8715,
+      "close": 1,
+      "open": 1,
+      "frames": 74,
+      "dpi": 96,
+      "minimize": 1
+    },
+    {
+      "restore": 1,
+      "mode": "zoom",
+      "lastFrameMs": 7.7577,
+      "close": 1,
+      "open": 1,
+      "frames": 79,
+      "dpi": 96,
+      "minimize": 1
+    },
+    {
+      "restore": 1,
+      "mode": "spring",
+      "lastFrameMs": 8.1572,
+      "close": 1,
+      "open": 1,
+      "frames": 77,
+      "dpi": 96,
+      "minimize": 1
+    },
+    {
+      "restore": 1,
+      "mode": "genie",
+      "lastFrameMs": 0.9311,
+      "close": 1,
+      "open": 1,
+      "frames": 84,
+      "dpi": 96,
+      "minimize": 1
+    },
+    {
+      "restore": 1,
+      "mode": "wobbly",
+      "lastFrameMs": 8.47,
+      "close": 1,
+      "open": 1,
+      "frames": 82,
+      "dpi": 96,
+      "minimize": 1
+    },
+    {
+      "settingsRemainedResponsive": true,
+      "test": "blocked fixture UI / capture isolation"
+    },
+    {
+      "effectsSuppressed": true,
+      "test": "actual Windows reduced-motion preference"
+    },
+    {
+      "test": "forced companion termination",
+      "windowRestored": true
+    },
+    {
+      "test": "stdin EOF shutdown",
+      "passed": true
+    },
+    {
+      "test": "single owner conflict",
+      "passed": true
+    },
+    {
+      "test": "truncated / out-of-order wire chunks",
+      "passed": true
+    }
+  ],
+  "host": "owned Win32 preview process",
+  "date": "2026-10-13",
+  "settingsDefinitions": 69,
+  "limitations": [
+    "Accelerated/translucent applications, secondary monitors, high DPI and real MyWallpaper sidebar not exercised by this fixture."
+  ],
+  "windows": {
+    "Caption": "Microsoft Windows 11 Professionnel",
+    "Version": "10.0.26200",
+    "BuildNumber": "26200"
+  }
+}

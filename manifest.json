@@ -1,0 +1,1139 @@
+{
+  "runtime": "native-v1",
+  "name": "Animations des fenêtres",
+  "version": "0.1.0",
+  "deviceSettingsVersion": "1",
+  "description": "Personnalisez les quatre transitions de vos fenêtres avec des ambiances, Genie, des rebonds et des profils par application.",
+  "settings": [
+    {
+      "id": "enabled",
+      "type": "boolean",
+      "label": "Animer les fenêtres",
+      "default": true,
+      "scope": "device",
+      "description": "Applique les effets aux applications choisies. Désactiver termine les effets et réaffiche les fenêtres."
+    },
+    {
+      "id": "profile",
+      "type": "select",
+      "label": "Ambiance",
+      "default": "fluid",
+      "scope": "device",
+      "options": [
+        {
+          "value": "fluid",
+          "label": "Fluide et expressif"
+        },
+        {
+          "value": "discreet",
+          "label": "Discret · fondu rapide"
+        },
+        {
+          "value": "cinema",
+          "label": "Cinéma · ample et progressif"
+        },
+        {
+          "value": "bounce",
+          "label": "Ressort · rebond vivant"
+        },
+        {
+          "value": "genie",
+          "label": "Genie · vers le bord de l’écran"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · déformation expérimentale"
+        },
+        {
+          "value": "custom",
+          "label": "Personnalisée"
+        }
+      ],
+      "description": "Les ambiances règlent les quatre mouvements. Choisissez Personnalisée pour régler chaque mouvement et sa durée."
+    },
+    {
+      "id": "speed",
+      "type": "range",
+      "label": "Vitesse (%)",
+      "default": 100,
+      "scope": "device",
+      "min": 25,
+      "max": 250,
+      "step": 5,
+      "description": "100 % correspond au profil. Une valeur plus élevée accélère les effets."
+    },
+    {
+      "id": "intensity",
+      "type": "range",
+      "label": "Amplitude (%)",
+      "default": 100,
+      "scope": "device",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "description": "Augmente le déplacement, le zoom, le rebond et la déformation sans changer la vitesse."
+    },
+    {
+      "id": "eventsSection",
+      "type": "section",
+      "label": "Quels moments animer ?",
+      "defaultCollapsed": false
+    },
+    {
+      "id": "openEnabled",
+      "type": "boolean",
+      "label": "À l’ouverture",
+      "default": true,
+      "scope": "device",
+      "parent": "eventsSection",
+      "description": "La fenêtre apparaît avec le mouvement choisi. Une apparition initiale peut précéder l’effet."
+    },
+    {
+      "id": "closeEnabled",
+      "type": "boolean",
+      "label": "À la fermeture",
+      "default": true,
+      "scope": "device",
+      "parent": "eventsSection",
+      "description": "Anime la dernière capture disponible après la fermeture. Une fenêtre ouverte très brièvement peut être ignorée."
+    },
+    {
+      "id": "minimizeEnabled",
+      "type": "boolean",
+      "label": "À la réduction",
+      "default": true,
+      "scope": "device",
+      "parent": "eventsSection",
+      "description": "Anime une capture de la fenêtre vers le bord choisi. L’animation Windows peut aussi se jouer."
+    },
+    {
+      "id": "restoreEnabled",
+      "type": "boolean",
+      "label": "À la restauration",
+      "default": true,
+      "scope": "device",
+      "parent": "eventsSection",
+      "description": "Rejoue un mouvement d’apparition quand la fenêtre sort de la barre des tâches."
+    },
+    {
+      "id": "appsSection",
+      "type": "section",
+      "label": "Applications et fenêtres",
+      "defaultCollapsed": false
+    },
+    {
+      "id": "applications",
+      "type": "textarea",
+      "label": "Applications à animer",
+      "default": "notepad.exe",
+      "scope": "device",
+      "placeholder": "notepad.exe\ncalc.exe",
+      "parent": "appsSection",
+      "description": "Un nom de programme par ligne, par exemple notepad.exe ou calc.exe. Plusieurs fenêtres de ces programmes sont suivies, y compris si elles s’ouvrent plus tard."
+    },
+    {
+      "id": "excludedApplications",
+      "type": "textarea",
+      "label": "Applications à laisser tranquilles",
+      "default": "",
+      "scope": "device",
+      "parent": "appsSection",
+      "description": "Un nom de programme par ligne. Cette liste a priorité sur les profils particuliers."
+    },
+    {
+      "id": "windowTypes",
+      "type": "select",
+      "label": "Types de fenêtres",
+      "default": "normal",
+      "scope": "device",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Fenêtres principales"
+        },
+        {
+          "value": "dialog",
+          "label": "Boîtes de dialogue"
+        },
+        {
+          "value": "all",
+          "label": "Fenêtres et boîtes de dialogue"
+        }
+      ],
+      "parent": "appsSection",
+      "description": "Les fenêtres système et les outils flottants sont ignorés. Le type est déduit de la classe et du propriétaire de la fenêtre."
+    },
+    {
+      "id": "previewVisible",
+      "type": "boolean",
+      "label": "Afficher les fenêtres d’essai",
+      "default": false,
+      "scope": "device",
+      "parent": "appsSection",
+      "description": "Ouvre un petit panneau avec Ouvrir, Réduire, Restaurer et Fermer. Les essais utilisent exactement le rendu natif de cet add-on."
+    },
+    {
+      "id": "motionSection",
+      "type": "section",
+      "label": "Mouvements personnalisés",
+      "defaultCollapsed": true
+    },
+    {
+      "id": "openMode",
+      "type": "select",
+      "label": "Ouverture · mouvement",
+      "default": "zoom",
+      "scope": "device",
+      "options": [
+        {
+          "value": "none",
+          "label": "Aucun"
+        },
+        {
+          "value": "fade",
+          "label": "Fondu"
+        },
+        {
+          "value": "slide",
+          "label": "Glissement"
+        },
+        {
+          "value": "zoom",
+          "label": "Zoom"
+        },
+        {
+          "value": "spring",
+          "label": "Ressort"
+        },
+        {
+          "value": "genie",
+          "label": "Genie"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · expérimental"
+        }
+      ],
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "openDuration",
+      "type": "range",
+      "label": "Ouverture · durée (ms)",
+      "default": 280,
+      "scope": "device",
+      "min": 80,
+      "max": 2000,
+      "step": 10,
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "closeMode",
+      "type": "select",
+      "label": "Fermeture · mouvement",
+      "default": "zoom",
+      "scope": "device",
+      "options": [
+        {
+          "value": "none",
+          "label": "Aucun"
+        },
+        {
+          "value": "fade",
+          "label": "Fondu"
+        },
+        {
+          "value": "slide",
+          "label": "Glissement"
+        },
+        {
+          "value": "zoom",
+          "label": "Zoom"
+        },
+        {
+          "value": "spring",
+          "label": "Ressort"
+        },
+        {
+          "value": "genie",
+          "label": "Genie"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · expérimental"
+        }
+      ],
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "closeDuration",
+      "type": "range",
+      "label": "Fermeture · durée (ms)",
+      "default": 280,
+      "scope": "device",
+      "min": 80,
+      "max": 2000,
+      "step": 10,
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "minimizeMode",
+      "type": "select",
+      "label": "Réduction · mouvement",
+      "default": "slide",
+      "scope": "device",
+      "options": [
+        {
+          "value": "none",
+          "label": "Aucun"
+        },
+        {
+          "value": "fade",
+          "label": "Fondu"
+        },
+        {
+          "value": "slide",
+          "label": "Glissement"
+        },
+        {
+          "value": "zoom",
+          "label": "Zoom"
+        },
+        {
+          "value": "spring",
+          "label": "Ressort"
+        },
+        {
+          "value": "genie",
+          "label": "Genie"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · expérimental"
+        }
+      ],
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "minimizeDuration",
+      "type": "range",
+      "label": "Réduction · durée (ms)",
+      "default": 360,
+      "scope": "device",
+      "min": 80,
+      "max": 2000,
+      "step": 10,
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "restoreMode",
+      "type": "select",
+      "label": "Restauration · mouvement",
+      "default": "slide",
+      "scope": "device",
+      "options": [
+        {
+          "value": "none",
+          "label": "Aucun"
+        },
+        {
+          "value": "fade",
+          "label": "Fondu"
+        },
+        {
+          "value": "slide",
+          "label": "Glissement"
+        },
+        {
+          "value": "zoom",
+          "label": "Zoom"
+        },
+        {
+          "value": "spring",
+          "label": "Ressort"
+        },
+        {
+          "value": "genie",
+          "label": "Genie"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · expérimental"
+        }
+      ],
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "restoreDuration",
+      "type": "range",
+      "label": "Restauration · durée (ms)",
+      "default": 360,
+      "scope": "device",
+      "min": 80,
+      "max": 2000,
+      "step": 10,
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "curve",
+      "type": "select",
+      "label": "Progression du mouvement",
+      "default": "out",
+      "scope": "device",
+      "options": [
+        {
+          "value": "out",
+          "label": "Rapide au départ, douce à l’arrivée"
+        },
+        {
+          "value": "smooth",
+          "label": "Douce au départ et à l’arrivée"
+        },
+        {
+          "value": "inout",
+          "label": "Accélérer puis ralentir"
+        },
+        {
+          "value": "linear",
+          "label": "Vitesse constante"
+        }
+      ],
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "slideDistance",
+      "type": "range",
+      "label": "Distance du glissement (px)",
+      "default": 54,
+      "scope": "device",
+      "min": 0,
+      "max": 400,
+      "step": 2,
+      "parent": "motionSection",
+      "description": "Distance à 100 % d’amplitude ; adaptée au DPI de la fenêtre.",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "startSize",
+      "type": "range",
+      "label": "Taille de départ du zoom (%)",
+      "default": 86,
+      "scope": "device",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "startOpacity",
+      "type": "range",
+      "label": "Visibilité au début ou à la fin (%)",
+      "default": 8,
+      "scope": "device",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "parent": "motionSection",
+      "description": "0 % disparaît complètement ; 100 % garde l’image opaque.",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "bounce",
+      "type": "range",
+      "label": "Force du rebond (%)",
+      "default": 14,
+      "scope": "device",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "damping",
+      "type": "range",
+      "label": "Calmer le rebond",
+      "default": 7,
+      "scope": "device",
+      "min": 2,
+      "max": 16,
+      "step": 1,
+      "parent": "motionSection",
+      "description": "Une valeur élevée amortit le rebond et la déformation plus vite.",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "wobbleAmount",
+      "type": "range",
+      "label": "Souplesse Wobbly (px)",
+      "default": 18,
+      "scope": "device",
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "parent": "motionSection",
+      "description": "Déforme une capture pendant la transition ; le déplacement interactif d’une fenêtre n’est pas déformé.",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "wobbleFrequency",
+      "type": "range",
+      "label": "Ondulations Wobbly",
+      "default": 3,
+      "scope": "device",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "parent": "motionSection",
+      "showIf": {
+        "setting": "profile",
+        "equals": "custom"
+      }
+    },
+    {
+      "id": "originSection",
+      "type": "section",
+      "label": "Direction et origine",
+      "defaultCollapsed": false
+    },
+    {
+      "id": "origin",
+      "type": "select",
+      "label": "Origine du mouvement",
+      "default": "bottom",
+      "scope": "device",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "Bas de l’écran"
+        },
+        {
+          "value": "top",
+          "label": "Haut de l’écran"
+        },
+        {
+          "value": "left",
+          "label": "Bord gauche"
+        },
+        {
+          "value": "right",
+          "label": "Bord droit"
+        },
+        {
+          "value": "center",
+          "label": "Centre de la fenêtre"
+        },
+        {
+          "value": "cursor",
+          "label": "Position du pointeur"
+        },
+        {
+          "value": "taskbar",
+          "label": "Bord de la barre des tâches"
+        }
+      ],
+      "parent": "originSection",
+      "description": "Dirige le glissement et le ressort, et attire Genie vers ce point. Le zoom suit aussi le pointeur ou la barre des tâches. Le bord de la barre est estimé sur l’écran de la fenêtre, sans cibler une icône précise."
+    },
+    {
+      "id": "lookSection",
+      "type": "section",
+      "label": "Aspect pendant le mouvement",
+      "defaultCollapsed": true
+    },
+    {
+      "id": "cornerRadius",
+      "type": "range",
+      "label": "Coins arrondis (px)",
+      "default": 12,
+      "scope": "device",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "parent": "lookSection",
+      "description": "Arrondit seulement la capture animée ; l’apparence normale de la fenêtre reste gérée par son application."
+    },
+    {
+      "id": "shadowSize",
+      "type": "range",
+      "label": "Ombre douce (px)",
+      "default": 24,
+      "scope": "device",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "parent": "lookSection"
+    },
+    {
+      "id": "shadowOpacity",
+      "type": "range",
+      "label": "Intensité de l’ombre (%)",
+      "default": 22,
+      "scope": "device",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "parent": "lookSection"
+    },
+    {
+      "id": "borderStyle",
+      "type": "select",
+      "label": "Contour de la capture",
+      "default": "none",
+      "scope": "device",
+      "options": [
+        {
+          "value": "none",
+          "label": "Sans contour"
+        },
+        {
+          "value": "solid",
+          "label": "Couleur unie"
+        },
+        {
+          "value": "gradient",
+          "label": "Dégradé vertical"
+        }
+      ],
+      "parent": "lookSection"
+    },
+    {
+      "id": "borderWidth",
+      "type": "range",
+      "label": "Épaisseur du contour (px)",
+      "default": 2,
+      "scope": "device",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "parent": "lookSection"
+    },
+    {
+      "id": "color1",
+      "type": "color",
+      "label": "Couleur de départ",
+      "default": "#64BFFAFF",
+      "scope": "device",
+      "alpha": true,
+      "parent": "lookSection"
+    },
+    {
+      "id": "color2",
+      "type": "color",
+      "label": "Couleur d’arrivée",
+      "default": "#DF83FFFF",
+      "scope": "device",
+      "alpha": true,
+      "parent": "lookSection",
+      "showIf": {
+        "setting": "borderStyle",
+        "equals": "gradient"
+      }
+    },
+    {
+      "id": "rulesSection",
+      "type": "section",
+      "label": "Profils particuliers",
+      "defaultCollapsed": true
+    },
+    {
+      "id": "rule1Enabled",
+      "type": "boolean",
+      "label": "Activer le profil particulier 1",
+      "default": false,
+      "scope": "device",
+      "parent": "rulesSection",
+      "description": "Le dernier profil activé correspondant à l’application et au type de fenêtre a priorité."
+    },
+    {
+      "id": "rule1Application",
+      "type": "string",
+      "label": "Application du profil 1",
+      "default": "notepad.exe",
+      "scope": "device",
+      "placeholder": "notepad.exe",
+      "parent": "rulesSection",
+      "description": "Un nom de programme, par exemple notepad.exe.",
+      "showIf": {
+        "setting": "rule1Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule1WindowType",
+      "type": "select",
+      "label": "Fenêtres du profil 1",
+      "default": "all",
+      "scope": "device",
+      "options": [
+        {
+          "value": "all",
+          "label": "Toutes"
+        },
+        {
+          "value": "normal",
+          "label": "Principales"
+        },
+        {
+          "value": "dialog",
+          "label": "Boîtes de dialogue"
+        }
+      ],
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule1Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule1Profile",
+      "type": "select",
+      "label": "Ambiance du profil 1",
+      "default": "fluid",
+      "scope": "device",
+      "options": [
+        {
+          "value": "fluid",
+          "label": "Fluide et expressif"
+        },
+        {
+          "value": "discreet",
+          "label": "Discret · fondu rapide"
+        },
+        {
+          "value": "cinema",
+          "label": "Cinéma · ample et progressif"
+        },
+        {
+          "value": "bounce",
+          "label": "Ressort · rebond vivant"
+        },
+        {
+          "value": "genie",
+          "label": "Genie · vers le bord de l’écran"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · déformation expérimentale"
+        },
+        {
+          "value": "off",
+          "label": "Aucune animation"
+        }
+      ],
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule1Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule1Speed",
+      "type": "range",
+      "label": "Vitesse du profil 1 (%)",
+      "default": 100,
+      "scope": "device",
+      "min": 25,
+      "max": 250,
+      "step": 5,
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule1Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule2Enabled",
+      "type": "boolean",
+      "label": "Activer le profil particulier 2",
+      "default": false,
+      "scope": "device",
+      "parent": "rulesSection",
+      "description": "Le dernier profil activé correspondant à l’application et au type de fenêtre a priorité."
+    },
+    {
+      "id": "rule2Application",
+      "type": "string",
+      "label": "Application du profil 2",
+      "default": "calc.exe",
+      "scope": "device",
+      "placeholder": "notepad.exe",
+      "parent": "rulesSection",
+      "description": "Un nom de programme, par exemple notepad.exe.",
+      "showIf": {
+        "setting": "rule2Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule2WindowType",
+      "type": "select",
+      "label": "Fenêtres du profil 2",
+      "default": "all",
+      "scope": "device",
+      "options": [
+        {
+          "value": "all",
+          "label": "Toutes"
+        },
+        {
+          "value": "normal",
+          "label": "Principales"
+        },
+        {
+          "value": "dialog",
+          "label": "Boîtes de dialogue"
+        }
+      ],
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule2Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule2Profile",
+      "type": "select",
+      "label": "Ambiance du profil 2",
+      "default": "fluid",
+      "scope": "device",
+      "options": [
+        {
+          "value": "fluid",
+          "label": "Fluide et expressif"
+        },
+        {
+          "value": "discreet",
+          "label": "Discret · fondu rapide"
+        },
+        {
+          "value": "cinema",
+          "label": "Cinéma · ample et progressif"
+        },
+        {
+          "value": "bounce",
+          "label": "Ressort · rebond vivant"
+        },
+        {
+          "value": "genie",
+          "label": "Genie · vers le bord de l’écran"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · déformation expérimentale"
+        },
+        {
+          "value": "off",
+          "label": "Aucune animation"
+        }
+      ],
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule2Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule2Speed",
+      "type": "range",
+      "label": "Vitesse du profil 2 (%)",
+      "default": 100,
+      "scope": "device",
+      "min": 25,
+      "max": 250,
+      "step": 5,
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule2Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule3Enabled",
+      "type": "boolean",
+      "label": "Activer le profil particulier 3",
+      "default": false,
+      "scope": "device",
+      "parent": "rulesSection",
+      "description": "Le dernier profil activé correspondant à l’application et au type de fenêtre a priorité."
+    },
+    {
+      "id": "rule3Application",
+      "type": "string",
+      "label": "Application du profil 3",
+      "default": "window-animations-preview.exe",
+      "scope": "device",
+      "placeholder": "notepad.exe",
+      "parent": "rulesSection",
+      "description": "Un nom de programme, par exemple notepad.exe.",
+      "showIf": {
+        "setting": "rule3Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule3WindowType",
+      "type": "select",
+      "label": "Fenêtres du profil 3",
+      "default": "all",
+      "scope": "device",
+      "options": [
+        {
+          "value": "all",
+          "label": "Toutes"
+        },
+        {
+          "value": "normal",
+          "label": "Principales"
+        },
+        {
+          "value": "dialog",
+          "label": "Boîtes de dialogue"
+        }
+      ],
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule3Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule3Profile",
+      "type": "select",
+      "label": "Ambiance du profil 3",
+      "default": "fluid",
+      "scope": "device",
+      "options": [
+        {
+          "value": "fluid",
+          "label": "Fluide et expressif"
+        },
+        {
+          "value": "discreet",
+          "label": "Discret · fondu rapide"
+        },
+        {
+          "value": "cinema",
+          "label": "Cinéma · ample et progressif"
+        },
+        {
+          "value": "bounce",
+          "label": "Ressort · rebond vivant"
+        },
+        {
+          "value": "genie",
+          "label": "Genie · vers le bord de l’écran"
+        },
+        {
+          "value": "wobbly",
+          "label": "Wobbly · déformation expérimentale"
+        },
+        {
+          "value": "off",
+          "label": "Aucune animation"
+        }
+      ],
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule3Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "rule3Speed",
+      "type": "range",
+      "label": "Vitesse du profil 3 (%)",
+      "default": 100,
+      "scope": "device",
+      "min": 25,
+      "max": 250,
+      "step": 5,
+      "parent": "rulesSection",
+      "showIf": {
+        "setting": "rule3Enabled",
+        "equals": true
+      }
+    },
+    {
+      "id": "comfortSection",
+      "type": "section",
+      "label": "Confort et compatibilité",
+      "defaultCollapsed": false
+    },
+    {
+      "id": "respectReducedMotion",
+      "type": "boolean",
+      "label": "Respecter les animations réduites de Windows",
+      "default": true,
+      "scope": "device",
+      "parent": "comfortSection",
+      "description": "Suspend les effets si Windows désactive les animations. Un changement de ce choix pendant un effet termine immédiatement cet effet."
+    },
+    {
+      "id": "skipFullscreen",
+      "type": "boolean",
+      "label": "Ignorer les fenêtres plein écran",
+      "default": true,
+      "scope": "device",
+      "parent": "comfortSection"
+    },
+    {
+      "id": "hideEntering",
+      "type": "boolean",
+      "label": "Masquer la vraie fenêtre pendant son apparition",
+      "default": true,
+      "scope": "device",
+      "parent": "comfortSection",
+      "description": "La capture remplace temporairement la fenêtre lors de l’ouverture et de la restauration. Un processus de surveillance la réaffiche en cas d’arrêt brutal."
+    },
+    {
+      "id": "allowTranslucent",
+      "type": "boolean",
+      "label": "Essayer les fenêtres translucides · expérimental",
+      "default": false,
+      "scope": "device",
+      "parent": "comfortSection",
+      "description": "La capture de verre, Mica et des applications accélérées peut être vide ou différente de l’original. Un échec de capture laisse la fenêtre visible."
+    },
+    {
+      "id": "performanceSection",
+      "type": "section",
+      "label": "Fluidité et ressources",
+      "defaultCollapsed": true
+    },
+    {
+      "id": "frameRate",
+      "type": "range",
+      "label": "Images par seconde visées",
+      "default": 60,
+      "scope": "device",
+      "min": 30,
+      "max": 60,
+      "step": 30,
+      "parent": "performanceSection",
+      "description": "30 réduit le travail de rendu ; 60 privilégie la fluidité. Le débit effectif dépend de la taille de la fenêtre et du processeur."
+    },
+    {
+      "id": "meshQuality",
+      "type": "range",
+      "label": "Finesse de Genie et Wobbly",
+      "default": 20,
+      "scope": "device",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "parent": "performanceSection",
+      "description": "Une valeur élevée affine les courbes et augmente le coût du rendu."
+    },
+    {
+      "id": "maxConcurrent",
+      "type": "range",
+      "label": "Effets simultanés",
+      "default": 3,
+      "scope": "device",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "parent": "performanceSection"
+    },
+    {
+      "id": "maxSnapshots",
+      "type": "range",
+      "label": "Fenêtres gardées en mémoire",
+      "default": 12,
+      "scope": "device",
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "parent": "performanceSection",
+      "description": "Les captures restent en mémoire, dans une limite totale de 64 Mo. Les fenêtres supplémentaires utilisent Windows."
+    },
+    {
+      "id": "cacheInterval",
+      "type": "range",
+      "label": "Actualiser les captures tous les (ms)",
+      "default": 400,
+      "scope": "device",
+      "min": 100,
+      "max": 2000,
+      "step": 50,
+      "parent": "performanceSection",
+      "description": "Les fermetures et réductions utilisent la dernière capture disponible."
+    },
+    {
+      "id": "cacheMaxAge",
+      "type": "range",
+      "label": "Âge maximal d’une capture (ms)",
+      "default": 2000,
+      "scope": "device",
+      "min": 250,
+      "max": 5000,
+      "step": 50,
+      "parent": "performanceSection",
+      "description": "Une capture trop ancienne est ignorée pour éviter d’animer un contenu périmé."
+    }
+  ],
+  "native": {
+    "companion": {
+      "runtime": "process-v2",
+      "entries": {
+        "windows-x86_64": "native/out/windows-x86_64/companion.exe"
+      }
+    }
+  }
+}

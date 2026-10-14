@@ -1,0 +1,14 @@
+{
+  "kind": "native runtime framebuffer, not a sidebar screenshot",
+  "source": "tests/runtime.ps1 / windows-26200-qualified / transitions/frames/restore-spring.bmp",
+  "sourceSha256": "6531d2654bc9127f11a6fc286c62b94435be4a03875c21e9658693e1daac6bfd",
+  "pngSha256": "ff1782c976e7f2b0f0704cf1aa40ee77575f0eb8442e2521d2d4de09f305f44f",
+  "minimumProgress": 0.38,
+  "dimensions": [
+    672,
+    465
+  ],
+  "windowsBuild": "26200",
+  "dpi": 96,
+  "transformation": "BGRA premultiplied BMP to straight-alpha RGBA PNG; rounded channel unpremultiplication"
+}

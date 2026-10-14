@@ -1,0 +1,14 @@
+{
+  "kind": "native runtime framebuffer, not a sidebar screenshot",
+  "source": "tests/runtime.ps1 / windows-26200-qualified / transitions/frames/open-wobbly.bmp",
+  "sourceSha256": "9e3cfb6dd5efc7a65b7758ccd1f0c48facd0fc891d41d5b8005224063f683c60",
+  "pngSha256": "1afe5ce1da3edfae5614b49cdb6f57f730c30b7ba0badc3ade16a404795b1574",
+  "minimumProgress": 0.38,
+  "dimensions": [
+    670,
+    463
+  ],
+  "windowsBuild": "26200",
+  "dpi": 96,
+  "transformation": "BGRA premultiplied BMP to straight-alpha RGBA PNG; rounded channel unpremultiplication"
+}

@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+third_party/nlohmann/** -text
+third_party/nlohmann/LICENSE.MIT whitespace=-blank-at-eol
